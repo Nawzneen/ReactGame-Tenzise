@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+main {
+}
+.box {
+  background-color: white;
+  border-radius: 20px;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4%;
+}
+.dice--container {
+  background-color: yellow;
+  margin: auto;
+  width: 18%;
+  /* height: 50px; */
+  padding-top: 18%;
+  position: relative;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.dice--item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.dice--container:hover {
+  background-color: rgba(157, 157, 13, 0.985);
+}
+.initiate {
+  width: 100px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.initiate:hover {
+  background-color: rgba(157, 157, 13, 0.985);
+  color: white;
+}
