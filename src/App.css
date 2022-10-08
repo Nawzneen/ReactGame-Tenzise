@@ -40,6 +40,7 @@
 main {
 }
 .box {
+  position: relative;
   background-color: white;
   border-radius: 20px;
   width: 500px;
@@ -55,7 +56,6 @@ main {
   background-color: yellow;
   margin: auto;
   width: 18%;
-  /* height: 50px; */
   padding-top: 18%;
   position: relative;
   border-radius: 20px;
@@ -92,4 +92,33 @@ main {
 }
 .hide {
   display: none;
+}
+.win-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(172, 68, 68);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+.win-board span {
+  color: rgb(0, 0, 0);
+  font: bold;
+  font-family: sans-serif;
+}
+.rules {
+  color: white;
+}
+.rules p {
+  margin-bottom: 30px;
+  margin-top: 10;
+}
+.rules h1 {
+  margin-bottom: 0;
 }
