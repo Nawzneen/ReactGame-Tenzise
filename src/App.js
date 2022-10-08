@@ -23,7 +23,7 @@ function App() {
   function generateDice() {
     const newArray = [];
     for (let i = 0; i < 10; i++) {
-      const randomNumber = Math.floor(Math.random() * 3);
+      const randomNumber = Math.floor(Math.random() * 6);
       newArray.push({ value: randomNumber, isHeld: false, id: nanoid() });
     }
     return newArray;
@@ -56,7 +56,7 @@ function App() {
     setClickedNum((prevClickedNum) => prevClickedNum + 1);
     setDice((prevDice) =>
       prevDice.map((die) => {
-        const randomNumber = Math.floor(Math.random() * 3);
+        const randomNumber = Math.floor(Math.random() * 6);
         return die.isHeld
           ? die
           : { value: randomNumber, isHeld: false, id: nanoid() };
