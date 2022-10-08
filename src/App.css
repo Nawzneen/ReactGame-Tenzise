@@ -70,7 +70,11 @@ main {
   right: 0;
 }
 .dice--container:hover {
-  background-color: rgba(157, 157, 13, 0.985);
+  background-color: rgba(45, 45, 43, 0.985);
+  color: white;
+}
+.isHeld {
+  background-color: rgba(192, 90, 0, 0.985);
 }
 .initiate {
   width: 100px;
@@ -85,4 +89,7 @@ main {
 .initiate:hover {
   background-color: rgba(157, 157, 13, 0.985);
   color: white;
+}
+.hide {
+  display: none;
 }
