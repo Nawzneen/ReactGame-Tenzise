@@ -1,34 +1,46 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Dice from "./Components/Dice";
 import React from "react";
+import { nanoid } from "nanoid";
 
 function App() {
-  const [diceArray, setDiceArray] = React.useState([]);
+  const [dice, setDice] = React.useState(generateDice());
+
   function generateDice() {
-    setDiceArray([]);
-    console.log("before", diceArray);
+    const newArray = [];
     for (let i = 0; i < 10; i++) {
-      const randomNumber = Math.floor(Math.random() * 9);
-      setDiceArray((prevDiceArray) => [...prevDiceArray, randomNumber]);
-      console.log("1");
-      console.log("after", diceArray);
+      const randomNumber = Math.floor(Math.random() * 8);
+      newArray.push({ value: randomNumber, isHeld: false, id: nanoid() });
+      console.log(newArray);
     }
-    console.log("end of function", diceArray);
+    return newArray;
   }
-  function stating() {
-    console.log(diceArray);
-  }
-  const diceArrayElements = diceArray.map((dice, index) => (
-    <Dice key={index} value={dice} />
+  const diceElement = dice.map((die) => (
+    <Dice value={die.value} key={die.id} />
   ));
+
+  // Roll the Dice Agiain
+  function roll() {
+    setDice(generateDice());
+  }
+  // const diceArrayElements = diceArray.map((dice, index) => (
+  //   <Dice key={index} value={dice} index={index} selectDice={selectDice} />
+  // ));
+  // Adding selected dices to an array
+  // const [selectedDicesArray, setSelectedDicesArray] = React.useState([]);
+  // function selectDice(event, id) {
+  //   console.log(id);
+  //   setSelectedDicesArray((prevDices) => [...prevDices, diceArray[id]]);
+  //   console.log(selectedDicesArray);
+  // }
+
   return (
     <div className="App">
       <main>
-        <div className="box">{diceArrayElements}</div>
+        <div className="box">{diceElement}</div>
       </main>
-      <button className="initiate" onClick={generateDice}>
-        Start
+      <button className="initiate" onClick={roll}>
+        Roll
       </button>
     </div>
   );
